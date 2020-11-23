@@ -1,15 +1,19 @@
 package gui;
 
+import java.net.URL;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import gui.util.Alerts;
+import gui.util.Constraints;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class ViewController {
+public class ViewController implements Initializable {
 	@FXML
 	private TextField txtNumero1;
 	
@@ -46,10 +50,15 @@ public class ViewController {
 					result = num1 / num2;
 					break;
 			}
-			
 			lblResult.setText(String.format("%.2f", result));
 		}catch(NumberFormatException e) {
 			Alerts.showAlert("Error", null, e.getMessage(), AlertType.ERROR);
 		}
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		Constraints.setTextFieldDouble(txtNumero1);
+		Constraints.setTextFieldDouble(txtNumero2);
 	}
 }
