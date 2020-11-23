@@ -2,12 +2,26 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="gui.ViewController">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
    <children>
-      <Button fx:id="btn" layoutX="169.0" layoutY="212.0" mnemonicParsing="false" onAction="#onBtnAction" text="Button" />
-      <Label layoutX="161.0" layoutY="185.0" text="Clique aqui!" />
+      <Label layoutX="144.0" layoutY="34.0" text="Calculadora">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNumero1" layoutX="40.0" layoutY="95.0" promptText="primeiro numero" />
+      <TextField fx:id="txtNumero2" layoutX="40.0" layoutY="182.0" promptText="segundo numero" />
+      <Button fx:id="btnCalc" layoutX="90.0" layoutY="250.0" mnemonicParsing="false" onAction="#onBtnCalcAction" text="Calcular" />
+      <Label layoutX="265.0" layoutY="98.0" text="resultado">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtOperacao" layoutX="86.0" layoutY="137.0" prefHeight="26.0" prefWidth="79.0" promptText="operação" />
+      <Label fx:id="lblResult" layoutX="288.0" layoutY="155.0" />
    </children>
 </AnchorPane>
